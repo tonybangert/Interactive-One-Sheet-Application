@@ -1,6 +1,3 @@
-import ParticleCanvas from "./components/ParticleCanvas";
-import CursorGlow from "./components/CursorGlow";
-import ScrollProgress from "./components/ScrollProgress";
 import StickyNav from "./components/StickyNav";
 import Hero from "./components/Hero";
 import ProblemSection from "./components/ProblemSection";
@@ -13,14 +10,9 @@ import CallToAction from "./components/CallToAction";
 export default function App() {
   return (
     <>
-      {/* Global layers */}
-      <ParticleCanvas />
-      <CursorGlow />
-      <ScrollProgress />
       <StickyNav />
 
-      {/* Content */}
-      <main className="relative z-10">
+      <main className="relative z-10 max-w-6xl mx-auto">
         <Hero />
         <ProblemSection />
         <HowWeWork />
