@@ -3,57 +3,68 @@ import RevealOnScroll from "./ui/RevealOnScroll";
 import { howWeWorkContent } from "../data/content";
 
 export default function HowWeWork() {
-  const { label, title, description, steps } = howWeWorkContent;
+  const { label, subtitle, steps } = howWeWorkContent;
 
   return (
-    <section id="how-we-work" className="px-6 md:px-16 lg:px-24 py-20">
+    <section id="how-we-work" className="px-6 md:px-16 lg:px-24 py-16">
+      {/* Section header with decorative lines */}
       <RevealOnScroll>
-        <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-brand-orange mb-3">
-          {label}
+        <div className="section-header-line mb-2">
+          <h2 className="font-display text-3xl md:text-4xl text-white tracking-tight">
+            {label}
+          </h2>
+        </div>
+        <p className="text-center text-brand-orange font-bold text-sm md:text-base tracking-[0.15em] uppercase mb-14">
+          {subtitle}
         </p>
-        <h3 className="font-display text-3xl md:text-4xl text-white mb-4 tracking-tight leading-[1.15]">
-          {title}
-        </h3>
-        <p className="text-gray-300 max-w-xl mb-12 leading-relaxed">{description}</p>
       </RevealOnScroll>
 
-      <div className="relative flex flex-col md:flex-row gap-6">
-        {/* Connecting line (desktop) */}
-        <motion.div
-          className="hidden md:block absolute top-1/2 left-0 right-0 h-[2px] -translate-y-1/2 z-0"
-          style={{ background: "var(--connector-gradient)" }}
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        />
-
+      {/* 3 horizontal steps with large numbers and connecting arrows */}
+      <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0 max-w-5xl mx-auto">
         {steps.map((step, i) => (
-          <RevealOnScroll
-            key={i}
-            delay={i * 0.15}
-            className="relative z-10 flex-1"
-          >
-            <motion.div
-              className="glass rounded-xl p-6 relative overflow-hidden"
-              whileHover={{
-                scale: 1.03,
-                y: -4,
-                borderColor: "var(--hover-border-orange)",
-              }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            >
-              <span className="absolute top-3 right-4 font-display text-4xl text-brand-orange/20">
-                {step.num}
-              </span>
-              <h4 className="font-semibold text-white text-lg mb-2">
-                {step.title}
-              </h4>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                {step.description}
-              </p>
-            </motion.div>
-          </RevealOnScroll>
+          <div key={i} className="flex items-center">
+            <RevealOnScroll delay={i * 0.15}>
+              <motion.div
+                className="step-card flex flex-col items-center text-center w-56"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                {/* Large number with icon area */}
+                <div className="relative mb-4">
+                  <span className="font-display text-7xl md:text-8xl text-brand-orange/90 leading-none step-number">
+                    {step.num}
+                  </span>
+                  {/* Decorative icon overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="step-icon-overlay w-16 h-16 rounded-full bg-white/[0.03] border border-white/10" />
+                  </div>
+                </div>
+
+                <h3 className="text-white font-semibold text-base mb-2">
+                  <span className="text-brand-orange">{step.title}:</span>{" "}
+                  <span className="text-gray-300 font-normal text-sm">
+                    {step.description}
+                  </span>
+                </h3>
+              </motion.div>
+            </RevealOnScroll>
+
+            {/* Connecting arrow (not after last step) */}
+            {i < steps.length - 1 && (
+              <motion.div
+                className="hidden md:flex items-center mx-4"
+                initial={{ opacity: 0, scaleX: 0 }}
+                whileInView={{ opacity: 1, scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 + i * 0.2 }}
+              >
+                <svg width="60" height="24" viewBox="0 0 60 24" className="text-brand-orange/60">
+                  <line x1="0" y1="12" x2="48" y2="12" stroke="currentColor" strokeWidth="2" />
+                  <path d="M44 4 L56 12 L44 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </motion.div>
+            )}
+          </div>
         ))}
       </div>
     </section>

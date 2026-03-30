@@ -5,107 +5,84 @@ import logoAplora from "../assets/logo-aplora-ai.png";
 
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 py-20"
-    >
-      {/* Header logos + brand */}
+    <section id="hero" className="relative px-6 md:px-16 lg:px-24 pt-10 pb-16">
+      {/* Header: Dual logos */}
       <motion.div
-        className="flex items-center gap-3 mb-12"
+        className="flex items-center justify-center gap-6 md:gap-12 mb-10"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <img
-          src={logoPerformanceLabs}
-          alt="PerformanceLabs"
-          className="w-10 h-10 rounded-lg"
-        />
-        <img
-          src={logoAplora}
-          alt="Aplora.ai"
-          className="w-10 h-10 rounded-lg"
-        />
-        <div className="ml-2">
-          <h1 className="font-display text-xl md:text-2xl font-normal text-white leading-tight tracking-tight">
-            PerformanceLabs Revenue Intelligence
-          </h1>
-          <p className="text-xs text-gray-300 tracking-widest mt-0.5">
-            Powered by <span className="text-aplora-blue font-medium">Aplora.ai</span>
-          </p>
+        {/* Aplora logo + name */}
+        <div className="flex items-center gap-2.5">
+          <img src={logoAplora} alt="Aplora.ai" className="w-10 h-10 rounded-lg" />
+          <span className="font-display text-xl md:text-2xl text-white tracking-tight">
+            Aplora.ai
+          </span>
         </div>
-        <div className="ml-auto text-right hidden md:block">
-          <p className="text-[10px] font-medium text-brand-orange tracking-[0.18em] uppercase">
-            Agentic Business Intelligence
-          </p>
-          <p className="text-[9px] text-gray-500 tracking-widest uppercase mt-0.5">
-            Enterprise AI That Deploys Into Your Operation
-          </p>
+
+        {/* Decorative swoosh connector */}
+        <div className="hidden sm:block">
+          <svg width="80" height="24" viewBox="0 0 80 24" className="text-brand-orange">
+            <path
+              d="M0 18 Q20 0, 40 12 Q60 24, 80 6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <circle cx="40" cy="12" r="3" fill="currentColor" />
+          </svg>
+        </div>
+
+        {/* PerformanceLabs logo + name */}
+        <div className="flex items-center gap-2.5">
+          <img src={logoPerformanceLabs} alt="PerformanceLabs" className="w-10 h-10 rounded-lg" />
+          <div className="flex items-baseline gap-1">
+            <span className="font-body text-lg md:text-xl font-bold text-white tracking-tight uppercase">
+              Performance
+            </span>
+            <span className="font-body text-lg md:text-xl font-bold text-brand-orange tracking-tight uppercase">
+              Labs.AI
+            </span>
+          </div>
         </div>
       </motion.div>
 
-      {/* Headline */}
-      <motion.h2
-        className="font-display text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.15] max-w-4xl tracking-tight"
+      {/* Main title with bracket decorations */}
+      <motion.div
+        className="text-center mb-8"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        {heroContent.headline}{" "}
-        <em className="italic text-brand-orange">{heroContent.highlightedText}</em>
-        {heroContent.headlineEnd}
-      </motion.h2>
+        <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] tracking-tight">
+          <span className="title-bracket text-brand-orange">{heroContent.title}</span>
+        </h1>
+        <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] tracking-tight text-brand-orange mt-1">
+          {heroContent.titleLine2}
+        </h1>
+      </motion.div>
 
-      {/* Subtext */}
+      {/* Quote */}
       <motion.p
-        className="text-gray-300 text-base md:text-lg mt-6 max-w-2xl leading-relaxed"
+        className="text-center font-display text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto mb-6 italic leading-relaxed"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        {heroContent.quote}
+      </motion.p>
+
+      {/* Description */}
+      <motion.p
+        className="text-center text-gray-300 text-sm md:text-base max-w-3xl mx-auto leading-relaxed"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.5 }}
       >
-        {heroContent.subtext}
+        {heroContent.description}
       </motion.p>
-
-      {/* CTA buttons */}
-      <motion.div
-        className="flex gap-4 mt-10"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.7 }}
-      >
-        <a
-          href="#contact"
-          className="px-6 py-3 rounded-lg bg-brand-orange text-navy-deep font-semibold text-sm hover:brightness-110 transition-all"
-        >
-          Get Started
-        </a>
-        <a
-          href="#architecture"
-          className="px-6 py-3 rounded-lg border border-white/20 text-white font-medium text-sm hover:border-brand-orange/50 hover:text-brand-orange transition-all"
-        >
-          See the Architecture
-        </a>
-      </motion.div>
-
-      {/* Gradient line */}
-      <motion.div
-        className="gradient-line mt-16 w-full opacity-60"
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 1, delay: 0.9 }}
-        style={{ transformOrigin: "left" }}
-      />
-
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <div className="w-5 h-8 rounded-full border-2 border-white/20 flex justify-center pt-1.5">
-          <div className="w-1 h-2 bg-brand-orange rounded-full" />
-        </div>
-      </motion.div>
     </section>
   );
 }
