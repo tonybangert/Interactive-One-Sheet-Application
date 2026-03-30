@@ -6,10 +6,10 @@ export default function CallToAction() {
   return (
     <section
       id="contact"
-      className="px-6 md:px-16 lg:px-24 py-24 relative"
+      className="px-6 md:px-16 lg:px-24 py-14 md:py-16 relative"
     >
       {/* Gradient accent */}
-      <div className="gradient-line opacity-40 mb-16" />
+      <div className="gradient-line opacity-40 mb-10" />
 
       <RevealOnScroll>
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
@@ -40,7 +40,7 @@ export default function CallToAction() {
       </RevealOnScroll>
 
       {/* Bottom padding for scroll */}
-      <div className="h-12" />
+      <div className="h-6" />
     </section>
   );
 }

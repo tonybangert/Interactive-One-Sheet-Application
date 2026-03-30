@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 py-20"
+      className="relative min-h-[90vh] flex flex-col justify-center px-6 md:px-16 lg:px-24 py-16"
     >
       {/* Header logos + brand */}
       <motion.div
@@ -89,7 +89,7 @@ export default function Hero() {
 
       {/* Gradient line */}
       <motion.div
-        className="gradient-line mt-16 w-full opacity-60"
+        className="gradient-line mt-10 w-full opacity-60"
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
         transition={{ duration: 1, delay: 0.9 }}

@@ -155,7 +155,7 @@ function ColumnConnector() {
 /* ── Main Architecture Section ── */
 export default function Architecture() {
   return (
-    <section id="architecture" className="px-6 md:px-16 lg:px-24 py-28 md:py-36 section-glow-blue relative">
+    <section id="architecture" className="px-6 md:px-16 lg:px-24 py-14 md:py-20 section-glow-blue relative">
       {/* Background glow blob */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -170,7 +170,7 @@ export default function Architecture() {
           <h3 className="font-display text-4xl md:text-5xl text-white mb-4 tracking-tight leading-[1.15]">
             From Ingestion to Executive Insight
           </h3>
-          <p className="text-gray-400 max-w-xl mb-14 leading-relaxed">
+          <p className="text-gray-400 max-w-xl mb-10 leading-relaxed">
             A three-stage pipeline that transforms raw operational data into executive-grade
             intelligence — no manual assembly required.
           </p>

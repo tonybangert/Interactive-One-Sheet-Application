@@ -37,12 +37,12 @@ const GRID_AREAS = [
 /* ── Main Section ── */
 export default function Solutions() {
   return (
-    <section id="solutions" className="px-6 md:px-16 lg:px-24 py-28 md:py-36">
+    <section id="solutions" className="px-6 md:px-16 lg:px-24 py-14 md:py-20">
       <RevealOnScroll>
         <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-brand-orange mb-3">
           Ready-to-Configure Solutions
         </p>
-        <h3 className="font-display text-4xl md:text-5xl text-white mb-14 tracking-tight leading-[1.15]">
+        <h3 className="font-display text-4xl md:text-5xl text-white mb-10 tracking-tight leading-[1.15]">
           What Gets Built
         </h3>
       </RevealOnScroll>

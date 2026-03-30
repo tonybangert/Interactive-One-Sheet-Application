@@ -114,7 +114,7 @@ function CenterArrow() {
 /* ── Main Section ── */
 export default function ProblemSection() {
   return (
-    <section id="problem" className="px-6 md:px-16 lg:px-24 py-28 md:py-36 section-glow-orange">
+    <section id="problem" className="px-6 md:px-16 lg:px-24 py-14 md:py-20 section-glow-orange">
       {/* Header */}
       <RevealOnScroll>
         <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-brand-orange mb-3">
@@ -123,7 +123,7 @@ export default function ProblemSection() {
         <h3 className="font-display text-4xl md:text-5xl text-white mb-4 tracking-tight leading-[1.15]">
           {problemIntro.title}
         </h3>
-        <p className="text-gray-300 max-w-xl mb-14 leading-relaxed">
+        <p className="text-gray-300 max-w-xl mb-10 leading-relaxed">
           {problemIntro.description}
         </p>
       </RevealOnScroll>

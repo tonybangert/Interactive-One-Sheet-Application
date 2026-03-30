@@ -6,7 +6,7 @@ export default function HowWeWork() {
   const { label, title, description, steps } = howWeWorkContent;
 
   return (
-    <section id="how-we-work" className="px-6 md:px-16 lg:px-24 py-20">
+    <section id="how-we-work" className="px-6 md:px-16 lg:px-24 py-10 md:py-14">
       <RevealOnScroll>
         <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-brand-orange mb-3">
           {label}
