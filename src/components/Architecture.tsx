@@ -34,7 +34,7 @@ function FlowArrow({ delay = 0 }: { delay?: number }) {
 
 export default function Architecture() {
   return (
-    <section id="architecture" className="px-6 md:px-16 lg:px-24 py-16 section-glow-blue relative">
+    <section id="architecture" className="px-6 md:px-16 lg:px-24 py-8 section-glow-blue relative">
       <div className="relative z-10">
         {/* Section header */}
         <RevealOnScroll>
@@ -43,7 +43,7 @@ export default function Architecture() {
               {architectureContent.label}
             </h2>
           </div>
-          <p className="text-center text-brand-orange font-bold text-sm md:text-base tracking-[0.15em] uppercase mb-14">
+          <p className="text-center text-brand-orange font-bold text-sm md:text-base tracking-[0.15em] uppercase mb-6">
             {architectureContent.subtitle}
           </p>
         </RevealOnScroll>
@@ -85,6 +85,7 @@ export default function Architecture() {
                     }`}
                     whileHover={{
                       y: -4,
+                      scale: 1.2,
                       boxShadow: stage.highlighted
                         ? "var(--hover-shadow-glow-core)"
                         : "var(--hover-shadow-dark-sm)",

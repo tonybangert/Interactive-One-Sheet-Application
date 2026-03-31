@@ -12,7 +12,7 @@ const iconMap: Record<string, React.ComponentType<{ size?: number; className?: s
 
 export default function ProblemSection() {
   return (
-    <section id="problem" className="px-6 md:px-16 lg:px-24 py-16">
+    <section id="problem" className="px-6 md:px-16 lg:px-24 py-8">
       {/* Section header with decorative lines */}
       <RevealOnScroll>
         <div className="section-header-line mb-2">
@@ -20,7 +20,7 @@ export default function ProblemSection() {
             {problemIntro.label}
           </h2>
         </div>
-        <p className="text-center text-brand-orange font-bold text-sm md:text-base tracking-[0.15em] uppercase mb-12">
+        <p className="text-center text-brand-orange font-bold text-sm md:text-base tracking-[0.15em] uppercase mb-6">
           {problemIntro.subtitle}
         </p>
       </RevealOnScroll>
@@ -35,6 +35,7 @@ export default function ProblemSection() {
                 className="problem-card glass rounded-xl p-6 text-center h-full flex flex-col items-center"
                 whileHover={{
                   y: -6,
+                  scale: 1.2,
                   borderColor: "var(--hover-border-orange)",
                   boxShadow: "var(--hover-shadow-glow)",
                 }}

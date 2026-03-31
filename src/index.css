@@ -55,19 +55,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Subtle circuit-board background pattern ── */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.03;
-  background-image:
-    linear-gradient(rgba(250, 168, 64, 0.3) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(250, 168, 64, 0.3) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
 
 /* ── Utility classes ── */
 
@@ -164,11 +151,6 @@ body::before {
   50% { box-shadow: 0 0 20px rgba(250, 168, 64, 0.6); }
 }
 
-@keyframes circuit-pulse {
-  0% { stroke: rgba(250, 168, 64, 0.2); filter: drop-shadow(0 0 2px rgba(250, 168, 64, 0)); }
-  50% { stroke: rgba(250, 168, 64, 0.8); filter: drop-shadow(0 0 6px rgba(250, 168, 64, 0.4)); }
-  100% { stroke: rgba(250, 168, 64, 0.2); filter: drop-shadow(0 0 2px rgba(250, 168, 64, 0)); }
-}
 
 @keyframes shimmer {
   0% { background-position: -200% center; }

@@ -16,9 +16,9 @@ const markerColors: Record<string, string> = {
 
 export default function Solutions() {
   return (
-    <section id="solutions" className="px-6 md:px-16 lg:px-24 py-12">
+    <section id="solutions" className="px-6 md:px-16 lg:px-24 py-8">
       <RevealOnScroll>
-        <p className="text-center text-brand-orange font-bold text-sm md:text-base tracking-[0.15em] uppercase mb-8">
+        <p className="text-center text-brand-orange font-bold text-sm md:text-base tracking-[0.15em] uppercase mb-6">
           READY-TO-CONFIGURE SOLUTIONS
         </p>
       </RevealOnScroll>

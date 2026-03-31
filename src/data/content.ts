@@ -49,25 +49,19 @@ export const problemCards = [
 /* ── How We Work ── */
 
 export const howWeWorkContent = {
-  label: "How We Work",
-  subtitle: "FORWARD-DEPLOYED EXECUTION",
-  steps: [
+  label: "What to Expect",
+  cards: [
     {
-      num: 1,
-      title: "Diagnose",
-      description: "Map your data ecosystem, identify gaps, score readiness.",
+      title: "Capitalize on Every Opportunity",
+      description: "Turn hidden revenue streams into measurable bottom-line growth.",
     },
     {
-      num: 2,
-      title: "Build",
-      description:
-        "Build and configure agentic intelligence in your environment.",
+      title: "Transform Your Strategy",
+      description: "Gain an entirely new, holistic view of your financial health.",
     },
     {
-      num: 3,
-      title: "Refine",
-      description:
-        "Iterate with your team until insights drive real decisions.",
+      title: "Achieve Predictable Growth",
+      description: "Hit every target consistently using precise, data-backed insights.",
     },
   ],
 };
@@ -104,37 +98,40 @@ export const architectureStages = [
   },
   {
     title: "Executive Intelligence",
-    description: "CFO, CMO, CRO decision surfaces",
+    description: "Insights for every C-Suite exec",
     icon: "Users",
   },
 ];
 
 /* ── Metrics (Proven Results) ── */
 
+export const metricsHeading = "What Changes in 30 Days";
+
 export const metrics = [
   {
     value: 83,
     suffix: "%",
-    label: "Data Health Score\nWithin 30 Days",
+    label: "of Revenue Blind Spots Eliminated in 30 Days",
     color: "orange",
   },
   {
     value: 4,
     suffix: "x",
-    label: "Faster Pipeline\nVisibility",
+    label: "Faster from Signal to Decision",
     color: "blue",
   },
   {
-    value: 100,
-    suffix: "%",
-    label: "Revenue Data\nUnified",
+    value: 1,
+    suffix: "",
+    textOverride: "One",
+    label: "Number. Every Source. Zero Conflicts.",
     color: "red",
   },
   {
-    value: 90,
+    value: 30,
     prefix: "<",
     suffix: "",
-    label: "<90 Days to\nProduction Value",
+    label: "Days to Go Live. ROI from Week 1.",
     color: "orange",
   },
 ];

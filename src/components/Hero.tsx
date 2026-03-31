@@ -5,20 +5,25 @@ import logoAplora from "../assets/logo-aplora-ai.png";
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative px-6 md:px-16 lg:px-24 pt-10 pb-16">
+    <section id="hero" className="relative px-6 md:px-16 lg:px-24 pt-8 pb-8">
       {/* Header: Dual logos */}
       <motion.div
-        className="flex items-center justify-center gap-6 md:gap-12 mb-10"
+        className="flex items-center justify-center gap-6 md:gap-12 mb-6"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        {/* Aplora logo + name */}
+        {/* PerformanceLabs logo + name */}
         <div className="flex items-center gap-2.5">
-          <img src={logoAplora} alt="Aplora.ai" className="w-10 h-10 rounded-lg" />
-          <span className="font-display text-xl md:text-2xl text-white tracking-tight">
-            Aplora.ai
-          </span>
+          <img src={logoPerformanceLabs} alt="PerformanceLabs" className="w-10 h-10 rounded-lg" />
+          <div className="flex items-baseline gap-1">
+            <span className="font-body text-lg md:text-xl font-bold text-white tracking-tight uppercase">
+              Performance
+            </span>
+            <span className="font-body text-lg md:text-xl font-bold text-brand-orange tracking-tight uppercase">
+              Labs.AI
+            </span>
+          </div>
         </div>
 
         {/* Decorative swoosh connector */}
@@ -35,23 +40,18 @@ export default function Hero() {
           </svg>
         </div>
 
-        {/* PerformanceLabs logo + name */}
+        {/* Aplora logo + name */}
         <div className="flex items-center gap-2.5">
-          <img src={logoPerformanceLabs} alt="PerformanceLabs" className="w-10 h-10 rounded-lg" />
-          <div className="flex items-baseline gap-1">
-            <span className="font-body text-lg md:text-xl font-bold text-white tracking-tight uppercase">
-              Performance
-            </span>
-            <span className="font-body text-lg md:text-xl font-bold text-brand-orange tracking-tight uppercase">
-              Labs.AI
-            </span>
-          </div>
+          <img src={logoAplora} alt="Aplora.ai" className="w-10 h-10 rounded-lg" />
+          <span className="font-display text-xl md:text-2xl text-white tracking-tight">
+            Aplora.ai
+          </span>
         </div>
       </motion.div>
 
       {/* Main title with bracket decorations */}
       <motion.div
-        className="text-center mb-8"
+        className="text-center mb-4"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -66,7 +66,7 @@ export default function Hero() {
 
       {/* Quote */}
       <motion.p
-        className="text-center font-display text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto mb-6 italic leading-relaxed"
+        className="text-center font-display text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto mb-3 italic leading-relaxed"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}

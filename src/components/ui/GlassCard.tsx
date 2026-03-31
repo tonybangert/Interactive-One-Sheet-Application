@@ -10,7 +10,7 @@ interface Props {
 export default function GlassCard({
   children,
   className = "",
-  hoverScale = 1.02,
+  hoverScale = 1.2,
 }: Props) {
   return (
     <motion.div
