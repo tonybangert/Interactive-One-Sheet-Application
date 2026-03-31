@@ -24,7 +24,7 @@ export default function App() {
         <div className="divider" />
         <section className="py-16 md:py-20">
           <p className="text-text-tertiary text-sm font-medium tracking-widest uppercase mb-10 text-center">
-            What It Looks Like
+            What Real Revenue Insights Look Like
           </p>
           <MiniDashboard />
         </section>
