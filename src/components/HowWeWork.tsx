@@ -9,7 +9,7 @@ export default function HowWeWork() {
     <section id="how-we-work" className="px-6 md:px-16 lg:px-24 py-8">
       <RevealOnScroll>
         <div className="section-header-line mb-6">
-          <h2 className="font-display text-3xl md:text-4xl text-white tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
             {label}
           </h2>
         </div>
@@ -30,7 +30,7 @@ export default function HowWeWork() {
               }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <h3 className="text-brand-orange font-semibold text-base mb-2">
+              <h3 className="text-brand-orange font-semibold text-base md:text-lg mb-2">
                 {card.title}
               </h3>
               <p className="text-gray-300 text-sm leading-relaxed">

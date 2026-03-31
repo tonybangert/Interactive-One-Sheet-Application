@@ -16,7 +16,6 @@
   --color-brand-charcoal: #1c2438;
   --color-brand-gray: #8896a8;
 
-  --font-display: "Instrument Serif", serif;
   --font-body: "DM Sans", sans-serif;
 
   --shadow-glow-sm: 0 4px 16px rgba(250, 168, 64, 0.08);
@@ -102,27 +101,6 @@ body {
   background: linear-gradient(90deg, var(--color-brand-orange), transparent);
 }
 
-/* ── Title bracket decorations ── */
-.title-bracket {
-  position: relative;
-  display: inline-block;
-}
-
-.title-bracket::before,
-.title-bracket::after {
-  font-weight: 300;
-  opacity: 0.6;
-}
-
-.title-bracket::before {
-  content: "\276E";
-  margin-right: 8px;
-}
-
-.title-bracket::after {
-  content: "\276F";
-  margin-left: 8px;
-}
 
 /* ── Section backgrounds ── */
 .section-glow-orange {

@@ -14,10 +14,10 @@ export default function App() {
       <CursorGlow />
       <main className="relative z-10 max-w-6xl mx-auto">
       <Hero />
-      <ProblemSection />
-      <Architecture />
       <HowWeWork />
+      <ProblemSection />
       <Solutions />
+      <Architecture />
       <CallToAction />
     </main>
     </>

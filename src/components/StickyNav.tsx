@@ -25,7 +25,7 @@ export default function StickyNav() {
             alt="PerformanceLabs"
             className="w-7 h-7 rounded"
           />
-          <span className="font-display text-sm text-white hidden sm:block">
+          <span className="text-sm font-semibold text-white hidden sm:block">
             PerformanceLabs
           </span>
         </div>

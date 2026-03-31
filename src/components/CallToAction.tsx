@@ -11,12 +11,12 @@ export default function CallToAction() {
           whileHover={{ scale: 1.02, boxShadow: "0 0 40px rgba(91, 184, 245, 0.1)" }}
           transition={{ duration: 0.3 }}
         >
-          <h2 className="font-display text-3xl md:text-4xl text-white mb-4 tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
             {ctaContent.heading}
           </h2>
           <a
             href={`mailto:${ctaContent.email}`}
-            className="text-brand-orange text-lg md:text-xl font-medium hover:underline transition-all"
+            className="text-brand-orange text-base md:text-lg font-medium hover:underline transition-all"
           >
             {ctaContent.email}
           </a>

@@ -16,11 +16,11 @@ export default function ProblemSection() {
       {/* Section header with decorative lines */}
       <RevealOnScroll>
         <div className="section-header-line mb-2">
-          <h2 className="font-display text-3xl md:text-4xl text-white tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
             {problemIntro.label}
           </h2>
         </div>
-        <p className="text-center text-brand-orange font-bold text-sm md:text-base tracking-[0.15em] uppercase mb-6">
+        <p className="text-center text-brand-orange font-bold text-sm tracking-[0.15em] uppercase mb-6">
           {problemIntro.subtitle}
         </p>
       </RevealOnScroll>
@@ -45,11 +45,6 @@ export default function ProblemSection() {
                 <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-4">
                   <Icon size={24} className="text-gray-300" />
                 </div>
-
-                {/* Number badge */}
-                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-brand-orange text-navy-deep text-sm font-bold mb-3">
-                  {card.num}
-                </span>
 
                 {/* Description */}
                 <p className="text-gray-300 text-sm leading-relaxed">{card.title}</p>

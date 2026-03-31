@@ -52,10 +52,10 @@ function MetricCard({
         }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
-        <div className={`font-display text-5xl md:text-6xl leading-none tracking-tight mb-4 ${colorValues[color]}`}>
+        <div className={`text-3xl md:text-4xl font-bold leading-none tracking-tight mb-4 ${colorValues[color]}`}>
           {textOverride ? textOverride : <>{prefix}{animated}{suffix}</>}
         </div>
-        <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+        <p className="text-gray-300 text-sm leading-relaxed">
           {label}
         </p>
       </motion.div>
@@ -68,7 +68,7 @@ export default function Metrics() {
     <section id="metrics" className="px-6 md:px-16 lg:px-24 py-8">
       <RevealOnScroll>
         <div className="section-header-line mb-6">
-          <h2 className="font-display text-3xl md:text-4xl text-white tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
             {metricsHeading}
           </h2>
         </div>

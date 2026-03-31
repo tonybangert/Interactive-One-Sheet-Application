@@ -39,11 +39,11 @@ export default function Architecture() {
         {/* Section header */}
         <RevealOnScroll>
           <div className="section-header-line mb-2">
-            <h2 className="font-display text-3xl md:text-4xl text-white tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
               {architectureContent.label}
             </h2>
           </div>
-          <p className="text-center text-brand-orange font-bold text-sm md:text-base tracking-[0.15em] uppercase mb-6">
+          <p className="text-center text-brand-orange font-bold text-sm tracking-[0.15em] uppercase mb-6">
             {architectureContent.subtitle}
           </p>
         </RevealOnScroll>

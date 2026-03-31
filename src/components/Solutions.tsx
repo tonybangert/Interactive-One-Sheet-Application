@@ -18,7 +18,7 @@ export default function Solutions() {
   return (
     <section id="solutions" className="px-6 md:px-16 lg:px-24 py-8">
       <RevealOnScroll>
-        <p className="text-center text-brand-orange font-bold text-sm md:text-base tracking-[0.15em] uppercase mb-6">
+        <p className="text-center text-brand-orange font-bold text-sm tracking-[0.15em] uppercase mb-6">
           READY-TO-CONFIGURE SOLUTIONS
         </p>
       </RevealOnScroll>
@@ -28,9 +28,9 @@ export default function Solutions() {
           const MarkerIcon = markerIcons[sol.marker];
           return (
             <RevealOnScroll key={i} delay={i * 0.1}>
-              <div className="flex items-start gap-3">
+              <div className="flex items-start justify-center gap-3">
                 <MarkerIcon size={18} className={`mt-0.5 shrink-0 ${markerColors[sol.color]}`} />
-                <p className="text-gray-200 text-sm md:text-base leading-relaxed">
+                <p className="text-gray-200 text-sm leading-relaxed">
                   <span className="font-semibold text-white">{sol.title}</span>{" "}
                   {sol.description}
                 </p>
