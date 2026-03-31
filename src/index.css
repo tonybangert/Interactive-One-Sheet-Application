@@ -1,46 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #102d50;
-  --color-navy-deep: #0a1628;
-  --color-navy-mid: #1a3d66;
+  --color-bg: #08090f;
+  --color-bg-raised: #0d0e16;
+  --color-bg-card: #11121a;
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-hover: rgba(255, 255, 255, 0.12);
+  --color-accent: #5bb8f5;
+  --color-accent-muted: rgba(91, 184, 245, 0.15);
   --color-brand-orange: #faa840;
   --color-brand-red: #ef4537;
-  --color-gray-100: #f4f6f8;
-  --color-gray-200: #e2e7ed;
-  --color-gray-300: #c5cdd6;
-  --color-gray-500: #7a8a9e;
-  --color-gray-700: #3d4f63;
-  --color-aplora-blue: #5bb8f5;
-  --color-brand-cream: #faf6ef;
-  --color-brand-charcoal: #1c2438;
-  --color-brand-gray: #8896a8;
+  --color-text-primary: #e8eaed;
+  --color-text-secondary: #8b8fa3;
+  --color-text-tertiary: #555870;
 
   --font-body: "DM Sans", sans-serif;
-
-  --shadow-glow-sm: 0 4px 16px rgba(250, 168, 64, 0.08);
-  --shadow-glow-md: 0 8px 32px rgba(250, 168, 64, 0.1);
-  --shadow-glow-lg: 0 8px 40px rgba(250, 168, 64, 0.15);
-}
-
-/* ── CSS custom properties ── */
-:root {
-  --hover-border-orange: rgba(91, 184, 245, 0.2);
-  --hover-border-orange-light: rgba(91, 184, 245, 0.15);
-  --hover-border-gray: rgba(180, 200, 220, 0.15);
-  --hover-shadow-glow: 0 8px 32px rgba(91, 184, 245, 0.06);
-  --hover-shadow-glow-md: 0 8px 32px rgba(91, 184, 245, 0.05);
-  --hover-shadow-glow-lg: 0 8px 40px rgba(91, 184, 245, 0.05);
-  --hover-shadow-glow-core: 0 0 24px rgba(91, 184, 245, 0.1);
-  --hover-shadow-dark: 0 8px 40px rgba(0, 0, 0, 0.3);
-  --hover-shadow-dark-sm: 0 4px 16px rgba(0, 0, 0, 0.2);
-  --svg-orange-50: rgba(250, 168, 64, 0.5);
-  --svg-orange-40: rgba(250, 168, 64, 0.4);
-  --svg-orange-30: rgba(250, 168, 64, 0.3);
-  --svg-orange-08: rgba(250, 168, 64, 0.08);
-  --svg-blue-50: rgba(91, 184, 245, 0.5);
-  --chip-glow-bg: radial-gradient(circle, rgba(250, 168, 64, 0.15) 0%, transparent 70%);
-  --glow-dot-orange: 0 0 8px rgba(250, 168, 64, 0.6);
 }
 
 html {
@@ -49,104 +23,38 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: var(--color-navy-deep);
-  color: #ffffff;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-
-/* ── Utility classes ── */
-
-.text-gradient {
-  background: linear-gradient(135deg, var(--color-brand-orange), var(--color-brand-red));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* ── Subtle grid background ── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
-.glass {
-  --glass-bg: rgba(255, 255, 255, 0.04);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
-
-.gradient-line {
-  height: 2px;
-  background: linear-gradient(90deg, var(--color-brand-orange), var(--color-brand-red));
-  border-radius: 1px;
-}
-
-/* ── Section header with decorative lines ── */
-.section-header-line {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  text-align: center;
-}
-
-.section-header-line::before,
-.section-header-line::after {
-  content: "";
-  flex: 1;
-  max-width: 120px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-brand-orange));
-}
-
-.section-header-line::after {
-  background: linear-gradient(90deg, var(--color-brand-orange), transparent);
-}
-
-
-/* ── Section backgrounds ── */
-.section-glow-orange {
-  background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(91, 184, 245, 0.02) 0%, transparent 70%);
-}
-
-.section-glow-blue {
-  background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(91, 184, 245, 0.03) 0%, transparent 70%);
-}
-
-/* ── CTA block ── */
-.cta-block {
-  background: linear-gradient(135deg, rgba(91, 184, 245, 0.08), rgba(140, 160, 220, 0.03));
-  border: 1px solid rgba(91, 184, 245, 0.15);
-}
-
-/* ── Step number glow ── */
-.step-number {
-  filter: drop-shadow(0 0 20px rgba(250, 168, 64, 0.2));
-}
-
-/* ── Keyframes ── */
-
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 8px rgba(91, 184, 245, 0.2); }
-  50% { box-shadow: 0 0 20px rgba(91, 184, 245, 0.4); }
-}
-
-
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--color-border);
 }
 
 /* ── Scrollbar ── */
-
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-navy-deep);
+  background: var(--color-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-navy-mid);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gray-500);
+  background: rgba(255, 255, 255, 0.14);
 }

@@ -1,43 +1,24 @@
 import RevealOnScroll from "./ui/RevealOnScroll";
 import { solutions } from "../data/content";
-import { Check, Diamond, Square } from "lucide-react";
-
-const markerIcons: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
-  check: Check,
-  diamond: Diamond,
-  square: Square,
-};
-
-const markerColors: Record<string, string> = {
-  orange: "text-brand-orange",
-  blue: "text-aplora-blue",
-  gray: "text-gray-400",
-};
 
 export default function Solutions() {
   return (
-    <section id="solutions" className="px-6 md:px-16 lg:px-24 py-8">
+    <section id="solutions" className="py-16 md:py-20">
       <RevealOnScroll>
-        <p className="text-center text-brand-orange font-bold text-sm tracking-[0.15em] uppercase mb-6">
-          READY-TO-CONFIGURE SOLUTIONS
+        <p className="text-text-tertiary text-sm font-medium tracking-widest uppercase mb-10 text-center">
+          Ready-to-Configure Solutions
         </p>
       </RevealOnScroll>
 
-      <div className="max-w-3xl mx-auto space-y-4">
-        {solutions.map((sol, i) => {
-          const MarkerIcon = markerIcons[sol.marker];
-          return (
-            <RevealOnScroll key={i} delay={i * 0.1}>
-              <div className="flex items-start justify-center gap-3">
-                <MarkerIcon size={18} className={`mt-0.5 shrink-0 ${markerColors[sol.color]}`} />
-                <p className="text-gray-200 text-sm leading-relaxed">
-                  <span className="font-semibold text-white">{sol.title}</span>{" "}
-                  {sol.description}
-                </p>
-              </div>
-            </RevealOnScroll>
-          );
-        })}
+      <div className="max-w-2xl mx-auto space-y-6 text-center">
+        {solutions.map((sol, i) => (
+          <RevealOnScroll key={i} delay={i * 0.08}>
+            <p className="text-text-secondary text-sm leading-relaxed">
+              <span className="font-semibold text-text-primary">{sol.title}</span>{" "}
+              {sol.description}
+            </p>
+          </RevealOnScroll>
+        ))}
       </div>
     </section>
   );

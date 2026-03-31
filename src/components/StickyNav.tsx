@@ -13,19 +13,19 @@ export default function StickyNav() {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-40 backdrop-blur-xl bg-navy-deep/80 border-b border-white/5"
+      className="fixed top-0 left-0 right-0 z-40 backdrop-blur-xl bg-bg/80 border-b border-border"
       initial={{ y: -80 }}
       animate={{ y: visible ? 0 : -80 }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
     >
-      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <img
             src={logoPerformanceLabs}
             alt="PerformanceLabs"
             className="w-7 h-7 rounded"
           />
-          <span className="text-sm font-semibold text-white hidden sm:block">
+          <span className="text-sm font-semibold text-text-primary hidden sm:block">
             PerformanceLabs
           </span>
         </div>
@@ -35,14 +35,14 @@ export default function StickyNav() {
             <a
               key={link.href}
               href={link.href}
-              className="text-xs text-gray-300 hover:text-brand-orange transition-colors hidden md:block"
+              className="text-sm text-text-secondary hover:text-text-primary transition-colors hidden md:block"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#contact"
-            className="text-xs px-4 py-1.5 rounded-md bg-brand-orange text-navy-deep font-semibold hover:brightness-110 transition-all"
+            className="text-sm px-4 py-1.5 rounded border border-accent/30 text-accent font-medium hover:bg-accent/5 transition-all"
           >
             Contact
           </a>

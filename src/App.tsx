@@ -4,22 +4,33 @@ import HowWeWork from "./components/HowWeWork";
 import Architecture from "./components/Architecture";
 import Solutions from "./components/Solutions";
 import CallToAction from "./components/CallToAction";
-import StarfieldCanvas from "./components/StarfieldCanvas";
-import CursorGlow from "./components/CursorGlow";
+import MiniDashboard from "./components/MiniDashboard";
+import GridBackground from "./components/StarfieldCanvas";
 
 export default function App() {
   return (
     <>
-      <StarfieldCanvas />
-      <CursorGlow />
-      <main className="relative z-10 max-w-6xl mx-auto">
-      <Hero />
-      <HowWeWork />
-      <ProblemSection />
-      <Solutions />
-      <Architecture />
-      <CallToAction />
-    </main>
+      <GridBackground />
+      <main className="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
+        <Hero />
+        <div className="divider" />
+        <HowWeWork />
+        <div className="divider" />
+        <ProblemSection />
+        <div className="divider" />
+        <Solutions />
+        <div className="divider" />
+        <Architecture />
+        <div className="divider" />
+        <section className="py-16 md:py-20">
+          <p className="text-text-tertiary text-sm font-medium tracking-widest uppercase mb-10 text-center">
+            What It Looks Like
+          </p>
+          <MiniDashboard />
+        </section>
+        <div className="divider" />
+        <CallToAction />
+      </main>
     </>
   );
 }

@@ -1,55 +1,94 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import RevealOnScroll from "./ui/RevealOnScroll";
 import { problemIntro, problemCards } from "../data/content";
-import { Wrench, Clock, TrendingDown, Lock } from "lucide-react";
+import { Wrench, Clock, TrendingDown, Lock, Check, ArrowRight } from "lucide-react";
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
-  Wrench,
-  Clock,
-  TrendingDown,
-  Lock,
+  Wrench, Clock, TrendingDown, Lock,
 };
 
 export default function ProblemSection() {
+  const [showSolutions, setShowSolutions] = useState(false);
+
   return (
-    <section id="problem" className="px-6 md:px-16 lg:px-24 py-8">
-      {/* Section header with decorative lines */}
+    <section id="problem" className="py-16 md:py-20">
       <RevealOnScroll>
-        <div className="section-header-line mb-2">
-          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-            {problemIntro.label}
-          </h2>
-        </div>
-        <p className="text-center text-brand-orange font-bold text-sm tracking-[0.15em] uppercase mb-6">
+        <p className="text-text-primary text-base md:text-lg font-semibold tracking-wide uppercase mb-6 text-center">
           {problemIntro.subtitle}
         </p>
+
+        {/* Toggle */}
+        <div className="flex items-center justify-center gap-3 mb-10">
+          <button
+            onClick={() => setShowSolutions(false)}
+            className={`text-sm px-4 py-1.5 rounded border transition-colors ${
+              !showSolutions
+                ? "border-accent/30 text-accent bg-accent/5"
+                : "border-border text-text-tertiary hover:text-text-secondary"
+            }`}
+          >
+            The Problem
+          </button>
+          <ArrowRight size={14} className="text-text-tertiary" />
+          <button
+            onClick={() => setShowSolutions(true)}
+            className={`text-sm px-4 py-1.5 rounded border transition-colors ${
+              showSolutions
+                ? "border-accent/30 text-accent bg-accent/5"
+                : "border-border text-text-tertiary hover:text-text-secondary"
+            }`}
+          >
+            Our Solution
+          </button>
+        </div>
       </RevealOnScroll>
 
-      {/* 4 problem cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {problemCards.map((card, i) => {
           const Icon = iconMap[card.icon];
           return (
-            <RevealOnScroll key={i} delay={i * 0.1}>
-              <motion.div
-                className="problem-card glass rounded-xl p-6 text-center h-full flex flex-col items-center"
-                whileHover={{
-                  y: -4,
-                  scale: 1.03,
-                  borderColor: "var(--hover-border-orange)",
-                  boxShadow: "var(--hover-shadow-glow)",
-                }}
-                transition={{ type: "spring", stiffness: 260, damping: 20 }}
-              >
-                {/* Icon */}
-                <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-4">
-                  <Icon size={24} className="text-gray-300" />
-                </div>
-
-                {/* Description */}
-                <p className="text-gray-300 text-sm leading-relaxed">{card.title}</p>
-              </motion.div>
-            </RevealOnScroll>
+            <div
+              key={i}
+              className={`rounded-lg p-8 h-full flex flex-col items-center text-center relative overflow-hidden border transition-all duration-300 ${
+                showSolutions
+                  ? "border-accent/20"
+                  : "border-border"
+              }`}
+              style={showSolutions ? { boxShadow: "0 0 20px rgba(91, 184, 245, 0.15), 0 0 40px rgba(91, 184, 245, 0.05)" } : {}}
+            >
+              <AnimatePresence mode="wait">
+                {!showSolutions ? (
+                  <motion.div
+                    key="problem"
+                    className="flex flex-col items-center"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 20 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <div className="w-10 h-10 rounded-md border border-border flex items-center justify-center mb-4">
+                      <Icon size={18} className="text-text-tertiary" />
+                    </div>
+                    <p className="text-text-secondary text-sm leading-relaxed">{card.title}</p>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="solution"
+                    className="flex flex-col items-center"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 20 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <div className="w-10 h-10 rounded-md border border-accent/20 bg-accent/5 flex items-center justify-center mb-4">
+                      <Check size={18} className="text-accent" />
+                    </div>
+                    <p className="text-text-secondary text-sm leading-relaxed">{card.solution}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           );
         })}
       </div>
