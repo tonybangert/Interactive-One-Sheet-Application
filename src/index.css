@@ -26,13 +26,13 @@
 
 /* ── CSS custom properties ── */
 :root {
-  --hover-border-orange: rgba(250, 168, 64, 0.3);
-  --hover-border-orange-light: rgba(250, 168, 64, 0.25);
-  --hover-border-gray: rgba(122, 138, 158, 0.3);
-  --hover-shadow-glow: 0 8px 32px rgba(250, 168, 64, 0.1);
-  --hover-shadow-glow-md: 0 8px 32px rgba(250, 168, 64, 0.08);
-  --hover-shadow-glow-lg: 0 8px 40px rgba(250, 168, 64, 0.08);
-  --hover-shadow-glow-core: 0 0 24px rgba(250, 168, 64, 0.2);
+  --hover-border-orange: rgba(91, 184, 245, 0.2);
+  --hover-border-orange-light: rgba(91, 184, 245, 0.15);
+  --hover-border-gray: rgba(180, 200, 220, 0.15);
+  --hover-shadow-glow: 0 8px 32px rgba(91, 184, 245, 0.06);
+  --hover-shadow-glow-md: 0 8px 32px rgba(91, 184, 245, 0.05);
+  --hover-shadow-glow-lg: 0 8px 40px rgba(91, 184, 245, 0.05);
+  --hover-shadow-glow-core: 0 0 24px rgba(91, 184, 245, 0.1);
   --hover-shadow-dark: 0 8px 40px rgba(0, 0, 0, 0.3);
   --hover-shadow-dark-sm: 0 4px 16px rgba(0, 0, 0, 0.2);
   --svg-orange-50: rgba(250, 168, 64, 0.5);
@@ -126,7 +126,7 @@ body {
 
 /* ── Section backgrounds ── */
 .section-glow-orange {
-  background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(250, 168, 64, 0.04) 0%, transparent 70%);
+  background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(91, 184, 245, 0.02) 0%, transparent 70%);
 }
 
 .section-glow-blue {
@@ -135,8 +135,8 @@ body {
 
 /* ── CTA block ── */
 .cta-block {
-  background: linear-gradient(135deg, rgba(250, 168, 64, 0.12), rgba(250, 168, 64, 0.04));
-  border: 1px solid rgba(250, 168, 64, 0.25);
+  background: linear-gradient(135deg, rgba(91, 184, 245, 0.08), rgba(140, 160, 220, 0.03));
+  border: 1px solid rgba(91, 184, 245, 0.15);
 }
 
 /* ── Step number glow ── */
@@ -147,8 +147,8 @@ body {
 /* ── Keyframes ── */
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 8px rgba(250, 168, 64, 0.3); }
-  50% { box-shadow: 0 0 20px rgba(250, 168, 64, 0.6); }
+  0%, 100% { box-shadow: 0 0 8px rgba(91, 184, 245, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(91, 184, 245, 0.4); }
 }
 
 

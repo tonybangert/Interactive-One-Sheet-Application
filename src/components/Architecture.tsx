@@ -80,12 +80,12 @@ export default function Architecture() {
                   <motion.div
                     className={`arch-block rounded-xl p-5 w-44 text-center ${
                       stage.highlighted
-                        ? "bg-gradient-to-br from-brand-orange/10 to-brand-red/5 border border-brand-orange/25"
+                        ? "bg-gradient-to-br from-aplora-blue/10 to-aplora-blue/5 border border-aplora-blue/20"
                         : "glass"
                     }`}
                     whileHover={{
                       y: -4,
-                      scale: 1.2,
+                      scale: 1.03,
                       boxShadow: stage.highlighted
                         ? "var(--hover-shadow-glow-core)"
                         : "var(--hover-shadow-dark-sm)",

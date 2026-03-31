@@ -44,7 +44,7 @@ function MetricCard({
         className={`metric-card rounded-xl p-8 text-center border-2 h-full flex flex-col items-center justify-center relative ${colorBorders[color]}`}
         style={{ backgroundColor: "rgba(12, 26, 48, 0.65)" }}
         whileHover={{
-          scale: 1.2,
+          scale: 1.03,
           zIndex: 10,
           backgroundColor: "rgba(17, 34, 64, 0.8)",
           borderColor: "var(--hover-border-orange)",

@@ -34,8 +34,8 @@ export default function ProblemSection() {
               <motion.div
                 className="problem-card glass rounded-xl p-6 text-center h-full flex flex-col items-center"
                 whileHover={{
-                  y: -6,
-                  scale: 1.2,
+                  y: -4,
+                  scale: 1.03,
                   borderColor: "var(--hover-border-orange)",
                   boxShadow: "var(--hover-shadow-glow)",
                 }}
