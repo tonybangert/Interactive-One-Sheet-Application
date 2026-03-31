@@ -42,11 +42,11 @@ function MetricCard({
       <motion.div
         ref={ref}
         className={`metric-card rounded-xl p-8 text-center border-2 h-full flex flex-col items-center justify-center relative ${colorBorders[color]}`}
-        style={{ backgroundColor: "#0c1a30" }}
+        style={{ backgroundColor: "rgba(12, 26, 48, 0.65)" }}
         whileHover={{
           scale: 1.2,
           zIndex: 10,
-          backgroundColor: "#112240",
+          backgroundColor: "rgba(17, 34, 64, 0.8)",
           borderColor: "var(--hover-border-orange)",
           boxShadow: "var(--hover-shadow-glow)",
         }}

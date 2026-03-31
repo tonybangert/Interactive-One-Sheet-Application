@@ -20,11 +20,11 @@ export default function HowWeWork() {
           <RevealOnScroll key={i} delay={i * 0.1}>
             <motion.div
               className="rounded-xl p-6 text-center h-full flex flex-col items-center justify-center border border-white/10 relative"
-              style={{ backgroundColor: "#0c1a30" }}
+              style={{ backgroundColor: "rgba(12, 26, 48, 0.65)" }}
               whileHover={{
                 scale: 1.2,
                 zIndex: 10,
-                backgroundColor: "#112240",
+                backgroundColor: "rgba(17, 34, 64, 0.8)",
                 borderColor: "var(--hover-border-orange)",
                 boxShadow: "var(--hover-shadow-glow)",
               }}
