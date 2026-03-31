@@ -43,7 +43,8 @@ export default function CursorGlow() {
   return (
     <div
       ref={glowRef}
-      className="fixed inset-0 z-[1] pointer-events-none"
+      className="fixed inset-0 pointer-events-none"
+      style={{ zIndex: -1 }}
     />
   );
 }
