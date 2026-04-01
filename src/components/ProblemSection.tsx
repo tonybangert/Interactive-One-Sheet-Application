@@ -24,7 +24,7 @@ export default function ProblemSection() {
             onClick={() => setShowSolutions(false)}
             className={`text-sm px-4 py-1.5 rounded border transition-colors ${
               !showSolutions
-                ? "border-accent/30 text-accent bg-accent/5"
+                ? "border-brand-orange/30 text-brand-orange bg-brand-orange/5"
                 : "border-border text-text-tertiary hover:text-text-secondary"
             }`}
           >

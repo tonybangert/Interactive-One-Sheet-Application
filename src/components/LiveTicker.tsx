@@ -25,23 +25,25 @@ export default function LiveTicker() {
   const item = tickerData[index];
 
   return (
-    <div className="flex items-center justify-center gap-2 text-sm h-6">
+    <div className="flex items-center justify-center gap-2 text-sm h-6 overflow-hidden relative">
       <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse shrink-0" />
-      <span className="text-text-tertiary">Live:</span>
-      <AnimatePresence mode="wait">
-        <motion.span
-          key={index}
-          className="inline-flex items-center gap-2"
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: 0.3 }}
-        >
-          <span className="text-text-secondary">{item.label}</span>
-          <span className="text-text-primary font-semibold">{item.value}</span>
-          <span className="text-green-400 text-sm">{item.delta}</span>
-        </motion.span>
-      </AnimatePresence>
+      <span className="text-text-tertiary shrink-0">Live:</span>
+      <div className="relative h-6 overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={index}
+            className="inline-flex items-center gap-1.5 md:gap-2 whitespace-nowrap h-6 text-xs md:text-sm"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.3 }}
+          >
+            <span className="text-text-secondary">{item.label}</span>
+            <span className="text-text-primary font-semibold">{item.value}</span>
+            <span className="text-green-400">{item.delta}</span>
+          </motion.span>
+        </AnimatePresence>
+      </div>
     </div>
   );
 }

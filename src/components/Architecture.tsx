@@ -48,12 +48,12 @@ export default function Architecture() {
         {/* Inputs */}
         <RevealOnScroll direction="left">
           <div className="text-center w-40">
-            <p className="text-[10px] font-medium tracking-widest uppercase text-accent mb-4">
+            <p className="text-[10px] font-medium tracking-widest uppercase text-text-primary mb-4">
               Data Inputs
             </p>
             <div className="space-y-2">
               {architectureInputs.map((input, i) => (
-                <p key={i} className="text-accent text-sm">{input}</p>
+                <p key={i} className="text-text-primary text-sm">{input}</p>
               ))}
             </div>
           </div>
