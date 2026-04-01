@@ -2,7 +2,6 @@ import Hero from "./components/Hero";
 import ProblemSection from "./components/ProblemSection";
 import HowWeWork from "./components/HowWeWork";
 import Architecture from "./components/Architecture";
-import Solutions from "./components/Solutions";
 import CallToAction from "./components/CallToAction";
 import MiniDashboard from "./components/MiniDashboard";
 import GridBackground from "./components/StarfieldCanvas";
@@ -10,15 +9,22 @@ import GridBackground from "./components/StarfieldCanvas";
 export default function App() {
   return (
     <>
+      {/* Global SVG gradient for icons */}
+      <svg width="0" height="0" className="absolute">
+        <defs>
+          <linearGradient id="orange-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#faa840" />
+            <stop offset="100%" stopColor="#ef4537" />
+          </linearGradient>
+        </defs>
+      </svg>
       <GridBackground />
       <main className="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
         <Hero />
         <div className="divider" />
-        <HowWeWork />
-        <div className="divider" />
         <ProblemSection />
         <div className="divider" />
-        <Solutions />
+        <HowWeWork />
         <div className="divider" />
         <Architecture />
         <div className="divider" />

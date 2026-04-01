@@ -31,6 +31,7 @@ function FlowChevron({ index }: { index: number }) {
 
 export default function Architecture() {
   const [expanded, setExpanded] = useState<number | null>(null);
+  const [hovered, setHovered] = useState<number | null>(null);
 
   return (
     <section id="architecture" className="py-16 md:py-20">
@@ -47,12 +48,12 @@ export default function Architecture() {
         {/* Inputs */}
         <RevealOnScroll direction="left">
           <div className="text-center w-40">
-            <p className="text-[10px] font-medium tracking-widest uppercase text-text-tertiary mb-4">
+            <p className="text-[10px] font-medium tracking-widest uppercase text-accent mb-4">
               Data Inputs
             </p>
             <div className="space-y-2">
               {architectureInputs.map((input, i) => (
-                <p key={i} className="text-text-secondary text-sm">{input}</p>
+                <p key={i} className="text-accent text-sm">{input}</p>
               ))}
             </div>
           </div>
@@ -73,16 +74,35 @@ export default function Architecture() {
                     isExpanded ? "bg-accent/[0.03]" : ""
                   }`}
                   onClick={() => setExpanded(isExpanded ? null : i)}
+                  onMouseEnter={() => setHovered(i)}
+                  onMouseLeave={() => setHovered(null)}
                   whileHover={{ backgroundColor: "rgba(91, 184, 245, 0.03)" }}
                 >
-                  <Icon
-                    size={32}
-                    className={`mx-auto mb-3 transition-colors ${
-                      stage.highlighted || isExpanded ? "text-accent" : "text-text-tertiary"
-                    }`}
-                  />
+                  {stage.highlighted ? (
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="url(#orange-gradient)" className="mx-auto mb-3">
+                      <rect x="4" y="4" width="16" height="16" rx="2" />
+                      <rect x="9" y="9" width="6" height="6" fill="#08090f" />
+                      <rect x="9" y="1" width="2" height="3" rx="0.5" />
+                      <rect x="13" y="1" width="2" height="3" rx="0.5" />
+                      <rect x="9" y="20" width="2" height="3" rx="0.5" />
+                      <rect x="13" y="20" width="2" height="3" rx="0.5" />
+                      <rect x="1" y="9" width="3" height="2" rx="0.5" />
+                      <rect x="1" y="13" width="3" height="2" rx="0.5" />
+                      <rect x="20" y="9" width="3" height="2" rx="0.5" />
+                      <rect x="20" y="13" width="3" height="2" rx="0.5" />
+                    </svg>
+                  ) : (
+                    <Icon
+                      size={32}
+                      className={`mx-auto mb-3 transition-colors ${
+                        hovered === i ? "text-text-primary" : "text-text-tertiary"
+                      }`}
+                    />
+                  )}
                   <h4 className={`font-semibold text-sm mb-1 transition-colors ${
-                    stage.highlighted || isExpanded ? "text-accent" : "text-text-primary"
+                    stage.highlighted
+                      ? "text-brand-orange"
+                      : hovered === i ? "text-text-primary" : "text-text-tertiary"
                   }`}>
                     {stage.title}
                   </h4>

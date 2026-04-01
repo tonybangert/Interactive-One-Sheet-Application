@@ -139,7 +139,7 @@ export default function Hero() {
 
       {/* Description */}
       <motion.p
-        className="text-center text-text-secondary text-sm max-w-2xl mx-auto leading-relaxed"
+        className="text-center text-text-secondary text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.7 }}

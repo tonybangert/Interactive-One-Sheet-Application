@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import RevealOnScroll from "./ui/RevealOnScroll";
-import { problemIntro, problemCards } from "../data/content";
+import { problemIntro, problemCards, solutions } from "../data/content";
 import { Wrench, Clock, TrendingDown, Lock, Check, ArrowRight } from "lucide-react";
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
@@ -92,6 +92,32 @@ export default function ProblemSection() {
           );
         })}
       </div>
+
+      {/* Solutions text - visible only when Our Solution is toggled */}
+      <AnimatePresence>
+        {showSolutions && (
+          <motion.div
+            className="max-w-2xl mx-auto space-y-6 text-center mt-10"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.3 }}
+          >
+            {solutions.map((sol, i) => (
+              <motion.p
+                key={i}
+                className="text-text-secondary text-base md:text-lg leading-relaxed"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: i * 0.1 }}
+              >
+                <span className="font-semibold text-text-primary">{sol.title}</span>{" "}
+                {sol.description}
+              </motion.p>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
