@@ -79,7 +79,13 @@ export default function Architecture() {
                   whileHover={{ backgroundColor: "rgba(91, 184, 245, 0.03)" }}
                 >
                   {stage.highlighted ? (
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="url(#orange-gradient)" className="mx-auto mb-3">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill={expanded !== null && !isExpanded ? "#555870" : "url(#orange-gradient)"}
+                      className="mx-auto mb-3 transition-all duration-300"
+                    >
                       <rect x="4" y="4" width="16" height="16" rx="2" />
                       <rect x="9" y="9" width="6" height="6" fill="#08090f" />
                       <rect x="9" y="1" width="2" height="3" rx="0.5" />
@@ -95,14 +101,14 @@ export default function Architecture() {
                     <Icon
                       size={32}
                       className={`mx-auto mb-3 transition-colors ${
-                        hovered === i ? "text-text-primary" : "text-text-tertiary"
+                        hovered === i ? "text-accent" : "text-text-tertiary"
                       }`}
                     />
                   )}
                   <h4 className={`font-semibold text-sm mb-1 transition-colors ${
                     stage.highlighted
-                      ? "text-brand-orange"
-                      : hovered === i ? "text-text-primary" : "text-text-tertiary"
+                      ? expanded !== null && !isExpanded ? "text-text-tertiary" : "text-brand-orange"
+                      : hovered === i ? "text-accent" : "text-text-tertiary"
                   }`}>
                     {stage.title}
                   </h4>
